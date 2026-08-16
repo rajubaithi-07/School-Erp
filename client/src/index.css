@@ -1,0 +1,436 @@
+/* =====================================================
+   GLOBAL RESET
+===================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+
+  background: #eef4fb;
+  color: #111827;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* =====================================================
+   PARENT LAYOUT
+===================================================== */
+
+.parent-layout {
+  min-height: 100vh;
+  display: flex;
+  background: #eef4fb;
+}
+
+
+/* =====================================================
+   PARENT SIDEBAR
+===================================================== */
+
+.parent-sidebar {
+  width: 265px;
+  min-height: 100vh;
+  background: #061329;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+
+/* BRAND */
+
+.parent-brand {
+  height: 115px;
+  padding: 24px 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.parent-brand-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.parent-brand h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.parent-brand span {
+  font-size: 14px;
+  color: #60a5fa;
+}
+
+
+/* MENU TITLE */
+
+.parent-menu-title {
+  padding: 30px 24px 15px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #80a2d7;
+}
+
+
+/* NAVIGATION */
+
+.parent-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0 14px;
+}
+
+.parent-nav-link {
+  min-height: 58px;
+  padding: 0 18px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #f1f5ff;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.parent-nav-link:hover {
+  background: rgba(37, 99, 235, 0.25);
+}
+
+.parent-nav-link.active {
+  background: #2864e8;
+  color: white;
+  font-weight: 700;
+}
+
+.parent-nav-icon {
+  width: 25px;
+  text-align: center;
+  font-size: 19px;
+}
+
+
+/* ACCOUNT */
+
+.parent-account {
+  margin-top: auto;
+  padding: 18px 16px 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.parent-account-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 5px 15px;
+}
+
+.parent-avatar {
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  background: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.parent-account-info strong {
+  display: block;
+  font-size: 15px;
+  color: white;
+}
+
+.parent-account-info span {
+  display: block;
+  margin-top: 3px;
+  font-size: 13px;
+  color: #60a5fa;
+}
+
+
+/* LOGOUT */
+
+.parent-logout {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  background: transparent;
+  color: #ff8b82;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.parent-logout:hover {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+
+/* =====================================================
+   PARENT MAIN
+===================================================== */
+
+.parent-main {
+  width: calc(100% - 265px);
+  min-height: 100vh;
+  margin-left: 265px;
+}
+
+
+/* =====================================================
+   TOP BAR
+===================================================== */
+
+.parent-topbar {
+  height: 95px;
+  background: #061329;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 34px;
+}
+
+.parent-topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.parent-topbar-brand > span {
+  font-size: 22px;
+}
+
+.parent-topbar-brand strong {
+  display: block;
+  font-size: 21px;
+}
+
+.parent-topbar-brand small {
+  display: block;
+  margin-top: 4px;
+  color: #60a5fa;
+  font-size: 14px;
+}
+
+.parent-topbar-logout {
+  border: none;
+  border-radius: 6px;
+  background: #ff4545;
+  color: white;
+  padding: 14px 25px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.parent-topbar-logout:hover {
+  background: #dc2626;
+}
+
+
+/* =====================================================
+   PAGE CONTENT
+===================================================== */
+
+.parent-content {
+  min-height: calc(100vh - 95px);
+  padding: 32px;
+  background: #eef4fb;
+}
+
+
+/* =====================================================
+   PARENT READ-ONLY MODE
+===================================================== */
+
+/*
+   Parent portal is VIEW ONLY.
+
+   Hide management/action buttons but keep
+   search fields and normal navigation working.
+*/
+
+.parent-read-only .add-button,
+.parent-read-only .add-btn,
+.parent-read-only .add-student,
+.parent-read-only .add-parent,
+.parent-read-only .add-fee,
+.parent-read-only .add-performance,
+.parent-read-only .add-examination,
+.parent-read-only .add-activity,
+.parent-read-only .mark-attendance,
+.parent-read-only .edit-button,
+.parent-read-only .delete-button {
+  display: none !important;
+}
+
+
+/* Hide buttons based on common button text/classes */
+
+.parent-read-only button.add-button,
+.parent-read-only button.add-btn,
+.parent-read-only button.mark-attendance {
+  display: none !important;
+}
+
+
+/*
+   IMPORTANT:
+   Do NOT hide every button here.
+
+   Search inputs, navigation and logout must continue
+   working.
+*/
+
+
+/* =====================================================
+   PARENT PAGE CARDS
+===================================================== */
+
+.parent-content .card,
+.parent-content .dashboard-card,
+.parent-content .panel,
+.parent-content .content-card {
+  background: white;
+  border-radius: 16px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+  .parent-sidebar {
+    width: 220px;
+  }
+
+  .parent-main {
+    width: calc(100% - 220px);
+    margin-left: 220px;
+  }
+
+  .parent-content {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  .parent-sidebar {
+    width: 75px;
+  }
+
+  .parent-brand {
+    justify-content: center;
+    padding: 15px;
+  }
+
+  .parent-brand > div:last-child {
+    display: none;
+  }
+
+  .parent-menu-title {
+    display: none;
+  }
+
+  .parent-nav {
+    padding: 10px;
+  }
+
+  .parent-nav-link {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .parent-nav-link span:last-child {
+    display: none;
+  }
+
+  .parent-account-info {
+    justify-content: center;
+  }
+
+  .parent-account-info > div:last-child {
+    display: none;
+  }
+
+  .parent-logout {
+    font-size: 0;
+  }
+
+  .parent-logout::before {
+    content: "🚪";
+    font-size: 18px;
+  }
+
+  .parent-main {
+    width: calc(100% - 75px);
+    margin-left: 75px;
+  }
+
+  .parent-topbar {
+    padding: 0 18px;
+  }
+
+  .parent-topbar-logout {
+    padding: 10px 16px;
+  }
+
+  .parent-content {
+    padding: 15px;
+  }
+}

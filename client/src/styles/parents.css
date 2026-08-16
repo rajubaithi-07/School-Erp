@@ -1,0 +1,824 @@
+
+
+/* =========================================================
+   PARENTS PAGE
+   Same design system as Teachers page
+========================================================= */
+
+.parents-page {
+  width: 100%;
+  min-height: 100%;
+  padding: 34px 42px 50px;
+  box-sizing: border-box;
+  background: #f5f7fb;
+  color: #111827;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.parents-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  margin-bottom: 38px;
+}
+
+.parents-label {
+  color: #2563eb;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  margin-bottom: 10px;
+}
+
+.parents-header h1 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 42px;
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+.parents-header p {
+  margin: 12px 0 0;
+  color: #60728c;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   ADD PARENT BUTTON
+========================================================= */
+
+.add-parent-btn {
+  border: none;
+  background: #2563eb;
+  color: white;
+  min-width: 178px;
+  height: 54px;
+  padding: 0 24px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.20);
+  transition: 0.2s ease;
+}
+
+.add-parent-btn span {
+  font-size: 22px;
+  margin-right: 8px;
+  vertical-align: -1px;
+}
+
+.add-parent-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.add-parent-btn:active {
+  transform: translateY(0);
+}
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.parent-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+  margin-bottom: 38px;
+}
+
+.parent-stat-card {
+  min-height: 126px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 26px 30px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  box-sizing: border-box;
+  box-shadow: 0 5px 18px rgba(15, 23, 42, 0.045);
+}
+
+.parent-stat-icon {
+  width: 64px;
+  height: 64px;
+  flex: 0 0 64px;
+  border-radius: 14px;
+  background: #eff6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.parent-stat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.parent-stat-info span {
+  color: #5d7696;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.parent-stat-info strong {
+  color: #0f172a;
+  font-size: 31px;
+  line-height: 1;
+  font-weight: 800;
+}
+
+/* =========================================================
+   PARENT RECORDS CARD
+========================================================= */
+
+.parent-records {
+  background: #ffffff;
+  border: 1px solid #e1e7ef;
+  border-radius: 17px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.045);
+}
+
+/* =========================================================
+   RECORDS HEADER
+========================================================= */
+
+.records-header {
+  min-height: 122px;
+  padding: 27px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e5eaf1;
+}
+
+.records-header h2 {
+  margin: 0;
+  color: #111827;
+  font-size: 27px;
+  font-weight: 750;
+}
+
+.records-header p {
+  margin: 10px 0 0;
+  color: #60728c;
+  font-size: 17px;
+}
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.parent-search {
+  width: 320px;
+  height: 52px;
+  border: 1px solid #cfd9e6;
+  border-radius: 10px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  box-sizing: border-box;
+  transition: 0.2s ease;
+}
+
+.parent-search:focus-within {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.parent-search span {
+  font-size: 22px;
+  margin-right: 10px;
+}
+
+.parent-search input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #1e293b;
+  font-size: 16px;
+}
+
+.parent-search input::placeholder {
+  color: #9aabc0;
+}
+
+/* =========================================================
+   TABLE WRAPPER
+========================================================= */
+
+.parent-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.parent-table {
+  width: 100%;
+  min-width: 1100px;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+.parent-table thead {
+  background: #f8fafc;
+}
+
+.parent-table th {
+  height: 65px;
+  padding: 0 20px;
+  text-align: left;
+  color: #4f6078;
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.parent-table td {
+  padding: 19px 20px;
+  color: #334155;
+  font-size: 15px;
+  vertical-align: middle;
+  border-bottom: 1px solid #e7ebf1;
+  white-space: nowrap;
+}
+
+.parent-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.parent-table tbody tr:hover {
+  background: #fafcff;
+}
+
+/* =========================================================
+   PARENT PROFILE
+========================================================= */
+
+.parent-profile {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 200px;
+}
+
+.parent-avatar {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  border-radius: 50%;
+  background: #eff6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.parent-profile > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.parent-profile strong {
+  color: #172033;
+  font-size: 16px;
+  font-weight: 750;
+}
+
+.parent-profile small {
+  color: #91a3bd;
+  font-size: 13px;
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 175px;
+}
+
+.contact-info span {
+  color: #334155;
+  font-size: 15px;
+}
+
+.contact-info small {
+  color: #91a3bd;
+  font-size: 13px;
+}
+
+/* =========================================================
+   RELATIONSHIP BADGE
+========================================================= */
+
+.relationship-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 0 14px;
+  border-radius: 9px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 72px;
+  min-height: 36px;
+  padding: 0 13px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.status-badge.active {
+  color: #15803d;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+}
+
+.status-badge.inactive {
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+}
+
+/* =========================================================
+   ACTIONS
+   TEXT BUTTONS
+========================================================= */
+
+.parent-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.parent-actions button {
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  background: #ffffff;
+  transition: 0.2s ease;
+}
+
+.parent-actions .view-btn {
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+  background: #eff6ff;
+}
+
+.parent-actions .view-btn:hover {
+  background: #dbeafe;
+}
+
+.parent-actions .edit-btn {
+  color: #475569;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+}
+
+.parent-actions .edit-btn:hover {
+  background: #f1f5f9;
+}
+
+.parent-actions .delete-btn {
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  background: #ffffff;
+}
+
+.parent-actions .delete-btn:hover {
+  background: #fef2f2;
+}
+
+/* =========================================================
+   LOADING / EMPTY / ERROR
+========================================================= */
+
+.parent-state {
+  min-height: 330px;
+  padding: 60px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.parent-state h3 {
+  margin: 18px 0 8px;
+  color: #111827;
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.parent-state p {
+  margin: 0;
+  max-width: 500px;
+  color: #7a8ca5;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.empty-parent-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  background: #eff6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+}
+
+/* =========================================================
+   LOADING SPINNER
+========================================================= */
+
+.loading-spinner {
+  width: 42px;
+  height: 42px;
+  border: 4px solid #dbeafe;
+  border-top-color: #2563eb;
+  border-radius: 50%;
+  animation: parentSpin 0.8s linear infinite;
+}
+
+@keyframes parentSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.error-state .state-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 16px;
+  background: #fff7ed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+}
+
+/* =========================================================
+   RETRY / ADD FIRST
+========================================================= */
+
+.retry-btn,
+.add-first-btn {
+  margin-top: 22px;
+  border: none;
+  background: #2563eb;
+  color: #ffffff;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.retry-btn:hover,
+.add-first-btn:hover {
+  background: #1d4ed8;
+}
+
+/* =========================================================
+   MODAL OVERLAY
+========================================================= */
+
+.parent-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.parent-modal {
+  width: min(760px, 100%);
+  max-height: calc(100vh - 50px);
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 25px 70px rgba(15, 23, 42, 0.25);
+}
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 25px 30px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: #111827;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.modal-header p {
+  margin: 7px 0 0;
+  color: #71829a;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.modal-close {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  border: none;
+  border-radius: 8px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  background: #e2e8f0;
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.parent-form {
+  padding: 28px 30px 30px;
+}
+
+.form-section-title {
+  margin: 4px 0 18px;
+  padding-bottom: 10px;
+  color: #2563eb;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+  border-bottom: 1px solid #e5eaf1;
+}
+
+.form-section-title:not(:first-child) {
+  margin-top: 28px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.form-group label {
+  color: #334155;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #1e293b;
+  font-family: inherit;
+  font-size: 15px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.form-group input,
+.form-group select {
+  height: 46px;
+  padding: 0 13px;
+}
+
+.form-group textarea {
+  min-height: 90px;
+  padding: 12px 13px;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #9aa9bb;
+}
+
+/* =========================================================
+   FORM ACTIONS
+========================================================= */
+
+.form-actions {
+  margin-top: 30px;
+  padding-top: 22px;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.cancel-btn,
+.save-parent-btn {
+  min-width: 125px;
+  height: 46px;
+  padding: 0 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.cancel-btn {
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #475569;
+}
+
+.cancel-btn:hover {
+  background: #f8fafc;
+}
+
+.save-parent-btn {
+  border: none;
+  background: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.18);
+}
+
+.save-parent-btn:hover {
+  background: #1d4ed8;
+}
+
+.cancel-btn:disabled,
+.save-parent-btn:disabled,
+.modal-close:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+  .parents-page {
+    padding: 30px;
+  }
+
+  .parent-stat-grid {
+    gap: 18px;
+  }
+
+  .parent-stat-card {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 850px) {
+  .parents-header {
+    flex-direction: column;
+  }
+
+  .add-parent-btn {
+    align-self: flex-start;
+  }
+
+  .parent-stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .records-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .parent-search {
+    width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .parents-page {
+    padding: 24px 18px 40px;
+  }
+
+  .parents-header h1 {
+    font-size: 34px;
+  }
+
+  .parents-header p {
+    font-size: 16px;
+  }
+
+  .parent-stat-card {
+    min-height: 110px;
+  }
+
+  .records-header {
+    padding: 22px;
+  }
+
+  .records-header h2 {
+    font-size: 23px;
+  }
+
+  .parent-form {
+    padding: 22px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .cancel-btn,
+  .save-parent-btn {
+    width: 100%;
+  }
+
+  .parent-modal-overlay {
+    padding: 12px;
+  }
+
+  .parent-modal {
+    max-height: calc(100vh - 24px);
+  }
+}

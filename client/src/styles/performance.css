@@ -1,0 +1,707 @@
+/* =========================================================
+   PERFORMANCE PAGE
+========================================================= */
+
+.performance-page {
+  min-height: 100vh;
+  background: #f5f7fb;
+  padding: 48px 60px 70px;
+  box-sizing: border-box;
+  color: #0f172a;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.performance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  margin-bottom: 42px;
+}
+
+.performance-label {
+  color: #2563eb;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+.performance-header h1 {
+  margin: 0;
+  font-size: 42px;
+  line-height: 1.15;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.performance-header p {
+  margin: 14px 0 0;
+  color: #64748b;
+  font-size: 18px;
+}
+
+/* =========================================================
+   ADD BUTTON
+========================================================= */
+
+.add-performance-btn {
+  border: none;
+  background: #2563eb;
+  color: white;
+  padding: 17px 25px;
+  min-width: 205px;
+  border-radius: 11px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.18);
+  transition: 0.2s ease;
+}
+
+.add-performance-btn span {
+  font-size: 21px;
+  margin-right: 8px;
+}
+
+.add-performance-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.performance-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 42px;
+}
+
+.performance-stat-card {
+  min-height: 130px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 25px 30px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+}
+
+.performance-stat-icon {
+  width: 62px;
+  height: 62px;
+  border-radius: 13px;
+  background: #eff6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 29px;
+  flex-shrink: 0;
+}
+
+.performance-stat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.performance-stat-info span {
+  color: #64748b;
+  font-size: 16px;
+}
+
+.performance-stat-info strong {
+  color: #0f172a;
+  font-size: 30px;
+  line-height: 1;
+}
+
+/* =========================================================
+   RECORDS
+========================================================= */
+
+.performance-records {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+}
+
+.records-header {
+  padding: 30px 38px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.records-header h2 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.records-header p {
+  margin: 9px 0 0;
+  color: #64748b;
+  font-size: 17px;
+}
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.performance-search {
+  width: 340px;
+  height: 54px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 0 17px;
+  box-sizing: border-box;
+  background: white;
+}
+
+.performance-search span {
+  font-size: 23px;
+}
+
+.performance-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #334155;
+  background: transparent;
+}
+
+.performance-search input::placeholder {
+  color: #94a3b8;
+}
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.performance-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.performance-table {
+  width: 100%;
+  min-width: 1100px;
+  border-collapse: collapse;
+}
+
+.performance-table thead {
+  background: #f8fafc;
+}
+
+.performance-table th {
+  text-align: left;
+  padding: 20px 25px;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.performance-table td {
+  padding: 20px 25px;
+  color: #334155;
+  font-size: 16px;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.performance-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.performance-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* =========================================================
+   STUDENT
+========================================================= */
+
+.performance-student {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.performance-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #eff6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+  flex-shrink: 0;
+}
+
+.performance-student strong {
+  display: block;
+  color: #0f172a;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.performance-student small {
+  display: block;
+  margin-top: 5px;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+/* =========================================================
+   MARKS
+========================================================= */
+
+.marks-value {
+  color: #0f172a;
+  font-size: 16px;
+}
+
+.marks-total {
+  color: #94a3b8;
+  font-size: 15px;
+}
+
+/* =========================================================
+   GRADE
+========================================================= */
+
+.grade-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.performance-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 65px;
+  padding: 8px 13px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.performance-status.pass {
+  color: #15803d;
+  background: #ecfdf3;
+  border: 1px solid #bbf7d0;
+}
+
+.performance-status.fail {
+  color: #dc2626;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+}
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.performance-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.performance-actions button {
+  padding: 9px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  background: white;
+  transition: 0.2s ease;
+}
+
+.performance-actions .view-btn {
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+}
+
+.performance-actions .view-btn:hover {
+  background: #eff6ff;
+}
+
+.performance-actions .edit-btn {
+  color: #475569;
+  border: 1px solid #cbd5e1;
+}
+
+.performance-actions .edit-btn:hover {
+  background: #f8fafc;
+}
+
+.performance-actions .delete-btn {
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.performance-actions .delete-btn:hover {
+  background: #fef2f2;
+}
+
+/* =========================================================
+   LOADING / EMPTY / ERROR
+========================================================= */
+
+.performance-state {
+  min-height: 330px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.performance-state h3 {
+  margin: 18px 0 8px;
+  color: #0f172a;
+  font-size: 23px;
+}
+
+.performance-state p {
+  margin: 0;
+  color: #64748b;
+  font-size: 16px;
+}
+
+.empty-performance-icon {
+  width: 75px;
+  height: 75px;
+  border-radius: 16px;
+  background: #eff6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 38px;
+}
+
+.state-icon {
+  font-size: 45px;
+}
+
+.loading-spinner {
+  width: 38px;
+  height: 38px;
+  border: 4px solid #dbeafe;
+  border-top-color: #2563eb;
+  border-radius: 50%;
+  animation: performance-spin 0.8s linear infinite;
+}
+
+@keyframes performance-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.retry-btn,
+.add-first-btn {
+  margin-top: 22px;
+  border: none;
+  border-radius: 9px;
+  background: #2563eb;
+  color: white;
+  padding: 12px 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.retry-btn:hover,
+.add-first-btn:hover {
+  background: #1d4ed8;
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.performance-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  z-index: 9999;
+  box-sizing: border-box;
+}
+
+.performance-modal {
+  width: min(800px, 100%);
+  max-height: 92vh;
+  overflow-y: auto;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 25px 70px rgba(15, 23, 42, 0.25);
+}
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.modal-header {
+  padding: 25px 30px;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 25px;
+  color: #0f172a;
+}
+
+.modal-header p {
+  margin: 7px 0 0;
+  color: #64748b;
+  font-size: 15px;
+}
+
+.modal-close {
+  width: 38px;
+  height: 38px;
+  border: none;
+  background: #f1f5f9;
+  color: #475569;
+  border-radius: 8px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  background: #e2e8f0;
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.performance-form {
+  padding: 30px;
+}
+
+.form-section-title {
+  color: #2563eb;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  margin-bottom: 18px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  color: #334155;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 12px 14px;
+  outline: none;
+  font-family: inherit;
+  font-size: 15px;
+  color: #334155;
+  background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+/* =========================================================
+   FORM ACTIONS
+========================================================= */
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.cancel-btn,
+.save-performance-btn {
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background: white;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+}
+
+.cancel-btn:hover {
+  background: #f8fafc;
+}
+
+.save-performance-btn {
+  background: #2563eb;
+  color: white;
+  border: 1px solid #2563eb;
+}
+
+.save-performance-btn:hover {
+  background: #1d4ed8;
+}
+
+.cancel-btn:disabled,
+.save-performance-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+  .performance-page {
+    padding: 35px 30px 60px;
+  }
+
+  .performance-stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .performance-header {
+    flex-direction: column;
+  }
+
+  .add-performance-btn {
+    align-self: flex-start;
+  }
+
+  .records-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .performance-search {
+    width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .performance-page {
+    padding: 25px 18px 50px;
+  }
+
+  .performance-header h1 {
+    font-size: 32px;
+  }
+
+  .performance-header p {
+    font-size: 15px;
+  }
+
+  .performance-stat-card {
+    padding: 20px;
+  }
+
+  .records-header {
+    padding: 24px;
+  }
+
+  .performance-form {
+    padding: 22px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.full-width {
+    grid-column: auto;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .cancel-btn,
+  .save-performance-btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,229 @@
+/* =========================================================
+   DASHBOARD LAYOUT
+========================================================= */
+
+.dashboard-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #f5f7fb;
+}
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.dashboard-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 282px;
+  height: 100vh;
+  box-sizing: border-box;
+  overflow-y: auto;
+  background: #071027;
+  color: #ffffff;
+  z-index: 1000;
+}
+
+.dashboard-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dashboard-sidebar::-webkit-scrollbar-thumb {
+  background: #243456;
+  border-radius: 10px;
+}
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 34px 28px 28px;
+  border-bottom: 1px solid #26314a;
+}
+
+.brand-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  background: #2563eb;
+  border-radius: 10px;
+  font-size: 25px;
+}
+
+.brand-text h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.brand-text span {
+  display: block;
+  margin-top: 3px;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+/* =========================================================
+   MENU TITLE
+========================================================= */
+
+.sidebar-menu-title {
+  padding: 26px 28px 12px;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.sidebar-nav {
+  padding: 0 16px 30px;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 48px;
+  margin-bottom: 4px;
+  padding: 0 16px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  color: #dbe4f5;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.sidebar-link:hover {
+  background: #14213e;
+  color: #ffffff;
+}
+
+.sidebar-link.active {
+  background: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.sidebar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  min-width: 24px;
+  font-size: 18px;
+}
+
+.sidebar-label {
+  white-space: nowrap;
+}
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.dashboard-main {
+  width: calc(100% - 282px);
+  min-height: 100vh;
+  margin-left: 282px;
+}
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.dashboard-topbar {
+  display: flex;
+  align-items: center;
+  height: 72px;
+  padding: 0 30px;
+  box-sizing: border-box;
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.topbar-title {
+  font-size: 21px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.dashboard-content {
+  width: 100%;
+  min-height: calc(100vh - 72px);
+  box-sizing: border-box;
+  padding: 32px;
+  background: #f5f7fb;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+  .dashboard-sidebar {
+    width: 230px;
+  }
+
+  .dashboard-main {
+    width: calc(100% - 230px);
+    margin-left: 230px;
+  }
+
+  .dashboard-content {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 700px) {
+  .dashboard-sidebar {
+    width: 72px;
+  }
+
+  .sidebar-brand {
+    justify-content: center;
+    padding: 20px 10px;
+  }
+
+  .brand-text,
+  .sidebar-menu-title,
+  .sidebar-label {
+    display: none;
+  }
+
+  .sidebar-nav {
+    padding: 15px 10px;
+  }
+
+  .sidebar-link {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .dashboard-main {
+    width: calc(100% - 72px);
+    margin-left: 72px;
+  }
+
+  .dashboard-content {
+    padding: 18px;
+  }
+}

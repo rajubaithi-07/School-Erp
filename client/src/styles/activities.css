@@ -1,0 +1,1137 @@
+/* =====================================================
+   ACTIVITIES PAGE
+===================================================== */
+
+.activities-page {
+  width: 100%;
+  min-height: 100%;
+  padding: 8px 0 40px;
+  color: #0f172a;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.activities-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  margin-bottom: 35px;
+}
+
+.activities-label {
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.activities-header h1 {
+  margin: 0;
+  font-size: 46px;
+  line-height: 1.1;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.activities-header p {
+  margin: 14px 0 0;
+  color: #64748b;
+  font-size: 17px;
+}
+
+
+/* =====================================================
+   ADD ACTIVITY BUTTON
+===================================================== */
+
+.add-activity-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  min-width: 155px;
+  height: 52px;
+
+  padding: 0 22px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 20px
+    rgba(37, 99, 235, 0.25);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.add-activity-btn span {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.add-activity-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 10px 24px
+    rgba(37, 99, 235, 0.3);
+}
+
+.add-activity-btn:active {
+  transform: translateY(0);
+}
+
+
+/* =====================================================
+   STATISTICS
+===================================================== */
+
+.activity-stat-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 22px;
+
+  margin-bottom: 38px;
+}
+
+.activity-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  min-height: 125px;
+
+  padding: 24px 26px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 5px 18px
+    rgba(15, 23, 42, 0.04);
+}
+
+.activity-stat-icon {
+  width: 70px;
+  height: 70px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background: #eff6ff;
+
+  font-size: 30px;
+}
+
+.activity-stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-stat-info span {
+  color: #64748b;
+  font-size: 15px;
+  margin-bottom: 7px;
+}
+
+.activity-stat-info strong {
+  color: #0f172a;
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.activity-stat-info small {
+  color: #94a3b8;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+
+/* =====================================================
+   ACTIVITY RECORDS
+===================================================== */
+
+.activity-records {
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 5px 18px
+    rgba(15, 23, 42, 0.04);
+}
+
+
+/* =====================================================
+   RECORD HEADER
+===================================================== */
+
+.records-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+
+  padding: 30px;
+
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.records-header h2 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.records-header p {
+  margin: 9px 0 0;
+
+  color: #64748b;
+
+  font-size: 15px;
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.activity-search {
+  width: 330px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 16px;
+
+  border: 1px solid #dbe3ef;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+}
+
+.activity-search span {
+  font-size: 20px;
+}
+
+.activity-search input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  color: #0f172a;
+
+  font-size: 15px;
+
+  background: transparent;
+}
+
+.activity-search input::placeholder {
+  color: #94a3b8;
+}
+
+
+/* =====================================================
+   STATES
+===================================================== */
+
+.activity-state {
+  min-height: 330px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 45px 20px;
+
+  text-align: center;
+}
+
+.activity-state h3 {
+  margin: 15px 0 8px;
+
+  color: #0f172a;
+
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.activity-state p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 15px;
+}
+
+.empty-activity-icon,
+.state-icon {
+  width: 72px;
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background: #eff6ff;
+
+  font-size: 32px;
+}
+
+.state-icon {
+  background: #fff7ed;
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.loading-spinner {
+  width: 42px;
+  height: 42px;
+
+  border: 4px solid #dbeafe;
+
+  border-top-color: #2563eb;
+
+  border-radius: 50%;
+
+  animation:
+    activity-spin 0.8s linear infinite;
+}
+
+@keyframes activity-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+.retry-btn {
+  margin-top: 20px;
+
+  padding: 11px 20px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.retry-btn:hover {
+  background: #1d4ed8;
+}
+
+
+/* =====================================================
+   ADD FIRST ACTIVITY
+===================================================== */
+
+.add-first-activity-btn {
+  margin-top: 22px;
+
+  padding: 13px 22px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 6px 15px
+    rgba(37, 99, 235, 0.2);
+}
+
+.add-first-activity-btn:hover {
+  background: #1d4ed8;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.activity-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.activity-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  min-width: 1150px;
+}
+
+.activity-table thead {
+  background: #f8fafc;
+}
+
+.activity-table th {
+  padding: 16px 18px;
+
+  text-align: left;
+
+  color: #334155;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+
+  border-bottom: 1px solid #e2e8f0;
+
+  white-space: nowrap;
+}
+
+.activity-table td {
+  padding: 18px;
+
+  color: #475569;
+
+  font-size: 14px;
+
+  border-bottom: 1px solid #edf2f7;
+
+  vertical-align: middle;
+}
+
+.activity-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.activity-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* =====================================================
+   ACTIVITY PROFILE
+===================================================== */
+
+.activity-profile {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  min-width: 210px;
+}
+
+.activity-avatar {
+  width: 45px;
+  height: 45px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background: #eff6ff;
+
+  font-size: 20px;
+}
+
+.activity-profile > div:last-child {
+  min-width: 0;
+}
+
+.activity-profile strong {
+  display: block;
+
+  color: #0f172a;
+
+  font-size: 15px;
+  font-weight: 750;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  max-width: 220px;
+}
+
+.activity-profile small {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #94a3b8;
+
+  font-size: 12px;
+
+  max-width: 220px;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   ACTIVITY TYPE
+===================================================== */
+
+.activity-type {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 7px 11px;
+
+  border-radius: 8px;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.activity-status-badge {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 80px;
+
+  padding: 7px 12px;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+.activity-status-badge.planned {
+  color: #2563eb;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+}
+
+.activity-status-badge.ongoing {
+  color: #d97706;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+}
+
+.activity-status-badge.completed {
+  color: #059669;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+}
+
+.activity-status-badge.cancelled {
+  color: #dc2626;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+}
+
+
+/* =====================================================
+   ACTIONS
+===================================================== */
+
+.activity-actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.activity-actions button {
+  height: 36px;
+
+  padding: 0 12px;
+
+  border-radius: 8px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  background: #ffffff;
+}
+
+.view-btn {
+  color: #2563eb;
+
+  border: 1px solid #bfdbfe;
+}
+
+.view-btn:hover {
+  background: #eff6ff;
+}
+
+.edit-btn {
+  color: #475569;
+
+  border: 1px solid #cbd5e1;
+}
+
+.edit-btn:hover {
+  background: #f8fafc;
+}
+
+.delete-btn {
+  color: #dc2626;
+
+  border: 1px solid #fecaca;
+}
+
+.delete-btn:hover {
+  background: #fef2f2;
+}
+
+
+/* =====================================================
+   MODAL OVERLAY
+===================================================== */
+
+.activity-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 25px;
+
+  background:
+    rgba(15, 23, 42, 0.62);
+
+  backdrop-filter: blur(3px);
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.activity-modal {
+  width: min(820px, 100%);
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background: #ffffff;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 25px 70px
+    rgba(15, 23, 42, 0.25);
+
+  animation:
+    activity-modal-in
+    0.2s ease-out;
+}
+
+@keyframes activity-modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* =====================================================
+   MODAL HEADER
+===================================================== */
+
+.modal-header {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 28px 32px;
+
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.modal-label {
+  margin-bottom: 8px;
+
+  color: #2563eb;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+}
+
+.modal-header h2 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.modal-header p {
+  margin: 8px 0 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+.modal-close {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #f1f5f9;
+
+  color: #475569;
+
+  font-size: 25px;
+
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  background: #e2e8f0;
+}
+
+.modal-close:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.activity-form {
+  padding: 30px 32px 32px;
+}
+
+.form-section-title {
+  margin-bottom: 18px;
+
+  padding-bottom: 10px;
+
+  color: #2563eb;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  border-bottom: 1px solid #dbe3ef;
+}
+
+.form-section-title:not(:first-child) {
+  margin-top: 30px;
+}
+
+
+/* =====================================================
+   FORM GRID
+===================================================== */
+
+.form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+
+  color: #1e293b;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: #0f172a;
+
+  font-family: inherit;
+
+  font-size: 15px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-group input,
+.form-group select {
+  height: 50px;
+
+  padding: 0 14px;
+}
+
+.form-group textarea {
+  min-height: 120px;
+
+  padding: 13px 14px;
+
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(37, 99, 235, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #94a3b8;
+}
+
+
+/* =====================================================
+   FORM ACTIONS
+===================================================== */
+
+.form-actions {
+  display: flex;
+
+  justify-content: flex-end;
+  align-items: center;
+
+  gap: 14px;
+
+  margin-top: 30px;
+
+  padding-top: 22px;
+
+  border-top: 1px solid #e2e8f0;
+}
+
+
+/* =====================================================
+   CANCEL BUTTON
+===================================================== */
+
+.cancel-btn {
+  min-width: 140px;
+
+  height: 50px;
+
+  padding: 0 22px;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: #334155;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background: #f8fafc;
+}
+
+.cancel-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+
+/* =====================================================
+   SAVE / ADD ACTIVITY BUTTON
+===================================================== */
+
+.save-activity-btn {
+  min-width: 155px;
+
+  height: 50px;
+
+  padding: 0 24px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 7px 18px
+    rgba(37, 99, 235, 0.25);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.save-activity-btn:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 9px 22px
+    rgba(37, 99, 235, 0.3);
+}
+
+.save-activity-btn:active {
+  transform: translateY(0);
+}
+
+.save-activity-btn:disabled {
+  background: #93c5fd;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1200px) {
+
+  .activity-stat-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+@media (max-width: 800px) {
+
+  .activities-header {
+    flex-direction: column;
+  }
+
+  .add-activity-btn {
+    width: 100%;
+  }
+
+  .records-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .activity-search {
+    width: 100%;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.full-width {
+    grid-column: auto;
+  }
+
+  .activity-modal-overlay {
+    padding: 10px;
+  }
+
+  .activity-modal {
+    max-height: 95vh;
+    border-radius: 15px;
+  }
+
+  .modal-header {
+    padding: 22px;
+  }
+
+  .activity-form {
+    padding: 22px;
+  }
+
+}
+
+
+@media (max-width: 550px) {
+
+  .activities-header h1 {
+    font-size: 36px;
+  }
+
+  .activity-stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .activity-stat-card {
+    min-height: 105px;
+  }
+
+  .records-header {
+    padding: 22px;
+  }
+
+  .records-header h2 {
+    font-size: 25px;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .cancel-btn,
+  .save-activity-btn {
+    width: 100%;
+  }
+
+}
