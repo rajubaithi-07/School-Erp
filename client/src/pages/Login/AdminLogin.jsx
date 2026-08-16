@@ -1,58 +1,60 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-function AdminLogin() {
+const AdminLogin = () => {
   const navigate = useNavigate();
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleLogin = async () => {
-    // Check empty fields
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
     if (!username || !password) {
-      alert("Please enter username and password");
+      alert("Please enter username and password.");
       return;
     }
 
-    try {
-      setLoading(true);
+    setLoading(true);
 
+    try {
       const response = await fetch(
-        "http://localhost:5000/api/admin/login",
+        `${import.meta.env.VITE_API_URL}/admin/login`,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            username: username,
-            password: password,
+            username,
+            password,
           }),
         }
       );
 
       const data = await response.json();
 
-      if (response.ok) {
-        // Save JWT token
-        localStorage.setItem("adminToken", data.token);
-
-        // Save admin information
-        localStorage.setItem(
-          "admin",
-          JSON.stringify(data.admin)
-        );
-
-        alert("✅ Login successful!");
-
-        // Go to dashboard
-        navigate("/admin/dashboard");
-      } else {
-        alert(data.message || "Invalid username or password");
+      if (!response.ok) {
+        alert(data.message || "Invalid username or password.");
+        setLoading(false);
+        return;
       }
+
+      // Save login information
+      if (data.token) {
+        localStorage.setItem("token", data.token);
+      }
+
+      if (data.admin) {
+        localStorage.setItem("admin", JSON.stringify(data.admin));
+      }
+
+      // Redirect to admin dashboard
+      navigate("/admin/dashboard");
     } catch (error) {
-      console.error("Login Error:", error);
+      console.error("Admin login error:", error);
+
       alert(
         "❌ Cannot connect to server. Make sure the backend is running."
       );
@@ -62,104 +64,84 @@ function AdminLogin() {
   };
 
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        background: "#eef4ff",
-      }}
-    >
-      <div
-        style={{
-          background: "#fff",
-          padding: "35px",
-          borderRadius: "12px",
-          width: "420px",
-          boxShadow: "0 5px 20px rgba(0,0,0,.15)",
-        }}
-      >
-        <h1
-          style={{
-            textAlign: "center",
-            color: "#2563eb",
-            marginBottom: "10px",
-          }}
-        >
-          🛡 Admin Login
-        </h1>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 via-white to-purple-100 px-4">
+      <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8">
 
-        <p
-          style={{
-            textAlign: "center",
-            color: "#666",
-            marginBottom: "25px",
-          }}
-        >
-          Login using Username
-        </p>
+        {/* Header */}
+        <div className="text-center mb-8">
+          <div className="text-5xl mb-3">🔐</div>
 
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          style={{
-            width: "100%",
-            padding: "12px",
-            marginBottom: "15px",
-            borderRadius: "6px",
-            border: "1px solid #ccc",
-            boxSizing: "border-box",
-          }}
-        />
+          <h1 className="text-3xl font-bold text-blue-700">
+            Admin Login
+          </h1>
 
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          style={{
-            width: "100%",
-            padding: "12px",
-            marginBottom: "20px",
-            borderRadius: "6px",
-            border: "1px solid #ccc",
-            boxSizing: "border-box",
-          }}
-        />
-
-        <button
-          onClick={handleLogin}
-          disabled={loading}
-          style={{
-            width: "100%",
-            padding: "12px",
-            background: loading ? "#93b4f5" : "#2563eb",
-            color: "white",
-            border: "none",
-            borderRadius: "6px",
-            cursor: loading ? "not-allowed" : "pointer",
-            fontSize: "16px",
-          }}
-        >
-          {loading ? "Logging in..." : "Login"}
-        </button>
-
-        <div
-          style={{
-            textAlign: "center",
-            marginTop: "20px",
-          }}
-        >
-          <Link to="/login">
-            ← Back to Login Selection
-          </Link>
+          <p className="text-gray-500 mt-2">
+            Login using Username
+          </p>
         </div>
+
+        {/* Login Form */}
+        <form onSubmit={handleLogin} className="space-y-5">
+
+          {/* Username */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Username
+            </label>
+
+            <input
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Enter username"
+              autoComplete="username"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              disabled={loading}
+            />
+          </div>
+
+          {/* Password */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Password
+            </label>
+
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter password"
+              autoComplete="current-password"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              disabled={loading}
+            />
+          </div>
+
+          {/* Login Button */}
+          <button
+            type="submit"
+            disabled={loading}
+            className={`w-full py-3 rounded-lg text-white font-semibold transition ${
+              loading
+                ? "bg-blue-400 cursor-not-allowed"
+                : "bg-blue-600 hover:bg-blue-700"
+            }`}
+          >
+            {loading ? "Logging in..." : "Login"}
+          </button>
+        </form>
+
+        {/* Back */}
+        <button
+          type="button"
+          onClick={() => navigate("/login")}
+          className="w-full mt-6 text-gray-700 hover:text-blue-600 font-medium"
+        >
+          ← Back to Login Selection
+        </button>
       </div>
     </div>
   );
-}
+};
 
 export default AdminLogin;
