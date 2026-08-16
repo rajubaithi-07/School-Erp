@@ -5,15 +5,36 @@ require("dotenv").config();
 const app = express();
 
 // =====================================================
-// MIDDLEWARE
+// CORS
 // =====================================================
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  process.env.FRONTEND_URL,
+].filter(Boolean);
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: function (origin, callback) {
+      // Allow requests from Postman/server-to-server requests
+      if (!origin) {
+        return callback(null, true);
+      }
+
+      // Allow local development and deployed frontend
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      return callback(new Error("Not allowed by CORS"));
+    },
     credentials: true,
   })
 );
+
+// =====================================================
+// BODY PARSER
+// =====================================================
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -194,9 +215,7 @@ app.use((error, req, res, next) => {
 
   res.status(error.status || 500).json({
     success: false,
-    message:
-      error.message ||
-      "Internal server error",
+    message: error.message || "Internal server error",
     error: error.message,
   });
 });

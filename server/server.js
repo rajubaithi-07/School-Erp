@@ -2,10 +2,6 @@ const app = require("./app");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-// ==========================================
-// SERVER CONFIGURATION
-// ==========================================
-
 const PORT = process.env.PORT || 5000;
 
 const MONGO_URI =
@@ -14,53 +10,73 @@ const MONGO_URI =
   process.env.DATABASE_URL;
 
 // ==========================================
-// START SERVER
+// MONGODB CONNECTION
 // ==========================================
 
-const startServer = async () => {
-  try {
-    // --------------------------------------
-    // CHECK MONGODB CONNECTION STRING
-    // --------------------------------------
+let isConnected = false;
 
-    if (!MONGO_URI) {
-      throw new Error(
-        "MongoDB connection string is missing. Please check your .env file."
-      );
-    }
-
-    // --------------------------------------
-    // CONNECT TO MONGODB
-    // --------------------------------------
-
-    await mongoose.connect(MONGO_URI);
-
-    console.log("=================================");
-    console.log("MongoDB Connected Successfully");
-    console.log("=================================");
-
-    // --------------------------------------
-    // START EXPRESS SERVER
-    // --------------------------------------
-
-    app.listen(PORT, () => {
-      console.log("=================================");
-      console.log("School ERP Server Running");
-      console.log(`http://localhost:${PORT}`);
-      console.log("=================================");
-    });
-  } catch (error) {
-    console.error("=================================");
-    console.error("SERVER START ERROR");
-    console.error("=================================");
-    console.error(error.message);
-
-    process.exit(1);
+const connectDB = async () => {
+  if (isConnected) {
+    return;
   }
+
+  if (!MONGO_URI) {
+    throw new Error(
+      "MongoDB connection string is missing. Please check MONGO_URI."
+    );
+  }
+
+  await mongoose.connect(MONGO_URI);
+
+  isConnected = true;
+
+  console.log("=================================");
+  console.log("MongoDB Connected Successfully");
+  console.log("=================================");
 };
 
 // ==========================================
-// START APPLICATION
+// VERCEL / PRODUCTION
 // ==========================================
 
-startServer();
+// Connect to MongoDB before handling requests
+app.use(async (req, res, next) => {
+  try {
+    await connectDB();
+    next();
+  } catch (error) {
+    console.error("MongoDB Connection Error:", error.message);
+
+    res.status(500).json({
+      success: false,
+      message: "Database connection failed",
+      error: error.message,
+    });
+  }
+});
+
+// Export Express app for Vercel
+module.exports = app;
+
+// ==========================================
+// LOCAL DEVELOPMENT
+// ==========================================
+
+if (require.main === module) {
+  connectDB()
+    .then(() => {
+      app.listen(PORT, () => {
+        console.log("=================================");
+        console.log("School ERP Server Running");
+        console.log(`http://localhost:${PORT}`);
+        console.log("=================================");
+      });
+    })
+    .catch((error) => {
+      console.error("=================================");
+      console.error("SERVER START ERROR");
+      console.error("=================================");
+      console.error(error.message);
+      process.exit(1);
+    });
+}
